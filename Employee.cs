@@ -23,5 +23,6 @@ namespace Personalregister
             salaries.Add(salary);
         }
 
+
     }
 }
