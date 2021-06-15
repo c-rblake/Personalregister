@@ -9,8 +9,9 @@ namespace Personalregister
 
     class Employee
     {
-        List<string> names = new();
-        List<float> salaries = new();
+        public List<string> names = new();
+        public List<float> salaries = new();
+        // List<float> salaries = new(); NOT ACCESSIBLE
 
         public void AddName(string name)
         {
@@ -21,9 +22,6 @@ namespace Personalregister
         {
             salaries.Add(salary);
         }
-
-
-
 
     }
 }
