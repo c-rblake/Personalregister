@@ -6,10 +6,24 @@ using System.Threading.Tasks;
 
 namespace Personalregister
 {
+
     class Employee
     {
-        public string namn;
-        public int lon;
-        
+        List<string> names = new();
+        List<float> salaries = new();
+
+        public void AddName(string name)
+        {
+            names.Add(name);
+        }
+
+        public void AddSalary(float salary)
+        {
+            salaries.Add(salary);
+        }
+
+
+
+
     }
 }
