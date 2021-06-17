@@ -1,5 +1,21 @@
 ﻿using System;
 
+
+
+/*
+ * Har några saker att anmärka på. Du kommer lära dig alla dessa i framtida övningar men det är bra att det upprepas:
+ 
+
+
+	
+    Man gör en oläskig while-loop med hjälp av do-while. Då kan man ha en evigt upprepande meny som man har kontroll över.
+	KLART Ett annat sätt att bygga strängar med variabler i är string s = $"Namn: {emp.Name}, Salary: {emp.salary}."
+	Jag håller med om att utskriftsfunktionen bör ligga i Employeeklassen, men det är inget krav.
+
+ */
+
+
+
 namespace Personalregister
 {
     class Program
@@ -10,42 +26,14 @@ namespace Personalregister
             
             Console.WriteLine("Skriv Tre anställda (TEXT) och deras lön(Siffra) ");
 
-            Employee emp = new();
-            // While Loop ? MEN DE ÄR FÖR LÄSKIGA.
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    
-                    Console.WriteLine("Name på anställd");
-                    string namn = Console.ReadLine();
-                    emp.AddName(namn);
-                    // Kolla Typ If string ELSE
+            Employee employee = new("Ludvig", 10000);
 
-                    Console.WriteLine("Lön för anställd");
-                    float lon = float.Parse(Console.ReadLine());
-                    emp.AddSalary(lon);
-                    // Kolla Typ If int ELSE
-                }
-            }
+            //Ett annat sätt att bygga strängar med variabler i är string s = $"Namn: {emp.Name}, Salary: {emp.salary}."
+            string s = $"Namn: {employee.Name}, lön: {employee.Salary}.";
+            Console.WriteLine(s);
 
-            Console.WriteLine("ANTAL ANSTÄLLDA:");
-            Console.WriteLine(emp.salaries.Count.ToString()) ;
+            Payroll payroll = new Payroll();
 
-            // print For loops i in range ...
-            //Console.WriteLine(emp.salaries[0]);
-            //Console.WriteLine(emp.names[0]);
-
-            // Bättre som method i Employees class.
-            {
-                for (int i = 0; i < emp.salaries.Count; i++)
-                {
-                    Console.WriteLine("*******************************");
-                    Console.WriteLine("Anställd: {0} Lön: {1}", emp.names[i], emp.salaries[i]);
-                }
-            }
-
-
-            // Console.WriteLine(emp.salaries);
         }
 
     }
