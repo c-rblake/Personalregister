@@ -20,10 +20,11 @@ namespace Personalregister
 {
     class Program
     {
+        static Payroll payroll = new Payroll(); // Access utifrån
         static void Main(string[] args)
         {
 
-            
+            // DO WHILE loop som lägger till anställda
             Console.WriteLine("Skriv Tre anställda (TEXT) och deras lön(Siffra) ");
 
             Employee employee = new("Ludvig", 10000);
@@ -32,8 +33,24 @@ namespace Personalregister
             string s = $"Namn: {employee.Name}, lön: {employee.Salary}.";
             Console.WriteLine(s);
 
-            Payroll payroll = new Payroll();
 
+            SeedData();
+
+            Employee[] employees = payroll.GetEmployees();
+
+            foreach (Employee emp in employees)
+            {
+                string e = $"Namn: {employee.Name}, lön: {employee.Salary}."; // Python F-string
+                Console.WriteLine(e);
+            }
+
+        }
+
+        private static void SeedData()
+        {
+            payroll.AddEmployee("Kalle", 20000);
+            payroll.AddEmployee("Kalle", 20000);
+            payroll.AddEmployee("Kalle", 20000);
         }
 
     }

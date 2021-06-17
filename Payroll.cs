@@ -17,5 +17,11 @@ namespace Personalregister
             payroll.Add(new Employee(name, salary));
 
         }
+
+        public Employee[] GetEmployees()
+        {
+            return payroll.ToArray(); // Skapar kopia Påverkar inte objected payroll.
+        }
+
     }
 }
