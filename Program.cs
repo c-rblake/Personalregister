@@ -21,10 +21,10 @@ namespace Personalregister
     class Program
     {
         static Payroll payroll = new Payroll(); // Access utifrån
-        static IUI ui = new ConsoleUI();
+        static IUI ui = new ConsoleUI(); // NY UI abstraktion SOM ANVÄNDER ConsoleUI
         static void Main(string[] args)
         {
-            SeedData(); // LOAD STATE / DATA
+            SeedData(); // LOAD STATE / Create DATA
             do
             {
                 ShowMainMeny();
@@ -56,12 +56,14 @@ namespace Personalregister
         {
             do
             {
-                ui.Print("Lägg till antälld");
+                ui.Print("Lägg till antälld, Q för att avsluta");
                 string name = Util.AskForString("Name, ", ui);
 
                 if (name.Equals("Q")) break;
 
+
                 int salary = Util.AskForInt("Salary", ui);
+                // saknar en break här
 
                 payroll.AddEmployee(name, salary);
 

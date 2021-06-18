@@ -9,10 +9,28 @@
         public string Name { get; } // Set with constructor
         public float Salary { get; }
 
+        public SalaryLevel SalaryLevel => Salary < 25000 ? SalaryLevel.junior : SalaryLevel.senior;
+        // SAMMA som 
+        //public SalaryLevel SalaryLevel2
+        //{
+        //    get
+        //    {
+        //        if (Salary < 25000)
+        //            return SalaryLevel.Junior;
+        //        else
+        //            return SalaryLevel.Senior;
+        //    }
+        //}
+
         public Employee(string name, int salary)
         {
             this.Name = name;
             this.Salary = salary;
+        }
+
+        public override string ToString()
+        {
+            return $"Namn: {this.Name} Lön: {this.Salary}";
         }
         //public void AddName(string name) // BEHAVIOR
         //{
