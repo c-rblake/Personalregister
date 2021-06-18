@@ -1,7 +1,7 @@
 ﻿namespace Personalregister
 {
 
-    internal class Employee
+    public class Employee
     {
         //public List<string> names = new(); //STATE, inte bra Public Field.
         //public List<float> salaries = new();

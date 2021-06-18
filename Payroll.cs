@@ -20,7 +20,7 @@ namespace Personalregister
 
         public Employee[] GetEmployees()
         {
-            return payroll.ToArray(); // Skapar kopia Påverkar inte objected payroll.
+            return payroll.ToArray(); // Skapar kopia Påverkar inte objectet payroll.
         }
 
     }
